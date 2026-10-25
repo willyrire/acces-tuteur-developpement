@@ -1,0 +1,47 @@
+name: "📚 Documentation"
+description: "Signaler une erreur ou proposer une amélioration de la documentation."
+title: "[Docs] "
+labels:
+  - documentation
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type de demande
+      options:
+        - Erreur dans la documentation
+        - Information manquante
+        - Documentation difficile à comprendre
+        - Nouvelle documentation
+        - Mise à jour d'une documentation existante
+        - Autre
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Document ou section concernée
+      placeholder: "Ex. : README.md, docs/architecture/authentication.md"
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Expliquez ce qui devrait être corrigé, ajouté ou amélioré.
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Modification suggérée
+      description: Vous pouvez proposer directement une correction ou une nouvelle formulation.
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Vérification
+      options:
+        - label: "J'ai vérifié qu'une issue similaire n'existe pas déjà."
+          required: true
