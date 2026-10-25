@@ -1,0 +1,93 @@
+name: "🐛 Rapport de bogue"
+description: "Signaler un problème ou un comportement inattendu."
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de prendre le temps de signaler ce problème.
+
+        ⚠️ Ne publiez jamais de données personnelles, clés API, jetons,
+        identifiants ou autres informations sensibles dans une issue publique.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description du problème
+      description: Décrivez clairement le problème rencontré.
+      placeholder: "Ex. : Lorsque je tente de..., l'application..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Étapes pour reproduire
+      description: Indiquez les étapes permettant de reproduire le problème.
+      placeholder: |
+        1. Aller à...
+        2. Cliquer sur...
+        3. Remplir...
+        4. Observer...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportement attendu
+      description: Que devrait-il normalement se produire?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Comportement observé
+      description: Que se produit-il réellement?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Partie concernée
+      options:
+        - Interface utilisateur
+        - Authentification
+        - Profils
+        - Recherche de tuteurs
+        - Matchmaking
+        - Messagerie
+        - Rencontres
+        - Paiements
+        - Administration
+        - Documentation
+        - API / Backend
+        - Autre
+    validations:
+      required: true
+
+  - type: input
+    id: browser
+    attributes:
+      label: Navigateur / environnement
+      placeholder: "Ex. : Chrome 153, Windows 11"
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Informations supplémentaires
+      description: Captures d'écran, messages d'erreur ou autres informations utiles.
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Vérifications
+      options:
+        - label: "J'ai vérifié qu'une issue similaire n'existe pas déjà."
+          required: true
+        - label: "Je confirme ne pas avoir inclus d'informations sensibles."
+          required: true
