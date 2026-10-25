@@ -1,0 +1,6 @@
+blank_issues_enabled: false
+
+contact_links:
+  - name: "🔐 Signaler une vulnérabilité de sécurité"
+    url: "https://github.com/willyrire/acces-tuteur-developpement/security/advisories/new"
+    about: "Veuillez utiliser le système de signalement privé de GitHub pour toute vulnérabilité de sécurité."
