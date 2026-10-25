@@ -1,0 +1,79 @@
+name: "✨ Proposition de fonctionnalité"
+description: "Proposer une nouvelle fonctionnalité ou une amélioration."
+title: "[Feature] "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de proposer une amélioration pour Accès Tuteur.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problème ou besoin
+      description: Quel problème cette fonctionnalité permettrait-elle de résoudre?
+      placeholder: "Actuellement..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Solution proposée
+      description: Décrivez la fonctionnalité ou l'amélioration souhaitée.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Partie concernée
+      options:
+        - Interface utilisateur
+        - Authentification
+        - Profils
+        - Recherche de tuteurs
+        - Matchmaking
+        - Messagerie
+        - Rencontres
+        - Paiements
+        - Administration
+        - API / Backend
+        - Documentation
+        - Autre
+    validations:
+      required: true
+
+  - type: dropdown
+    id: audience
+    attributes:
+      label: Utilisateurs concernés
+      multiple: true
+      options:
+        - Étudiants
+        - Parents
+        - Tuteurs
+        - Administrateurs
+        - Développeurs
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives envisagées
+      description: Existe-t-il d'autres façons de résoudre le problème?
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Informations supplémentaires
+      description: Maquettes, exemples, références ou autres détails.
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Vérification
+      options:
+        - label: "J'ai vérifié qu'une proposition similaire n'existe pas déjà."
+          required: true
