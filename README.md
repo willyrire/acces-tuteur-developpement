@@ -33,6 +33,23 @@ Il permet notamment de :
 
 **Ce dépôt ne contient pas l’intégralité du code source d’Accès Tuteur.**
 
+## Rejoindre le développement d’Accès Tuteur
+
+Accès Tuteur est ouvert aux développeurs passionnés souhaitant participer à la conception, au développement et à l’évolution de la plateforme.
+
+Que vous soyez étudiant, développeur autodidacte ou professionnel expérimenté, nous serions heureux d’échanger avec vous sur les possibilités de collaboration.
+
+**Vous souhaitez faire partie de l’aventure ?**
+
+Contactez directement le responsable du développement :
+
+- **Courriel :** [william.leveille@accestuteur.ca](mailto:william.leveille@accestuteur.ca)
+- **Instagram :** [willyrire](https://instagram.com/willyrire)
+
+Présentez brièvement vos compétences, vos projets précédents et ce qui vous motive à rejoindre Accès Tuteur.
+
+Les modalités de participation et les éventuels accès aux ressources du projet seront discutés individuellement.
+
 ## Suivi du développement
 
 Les activités de développement peuvent être suivies au moyen des outils GitHub :
