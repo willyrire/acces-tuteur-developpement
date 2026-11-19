@@ -19,6 +19,29 @@ Elle vise à centraliser différents aspects des services de tutorat, notamment 
 
 Le projet accorde une attention particulière à l’expérience utilisateur, à la sécurité, à la protection des données et à la maintenabilité de ses systèmes.
 
+### Statistiques du code source
+
+| Type de fichier | Fichiers | Lignes totales | Code | Commentaires | Vides |
+|---|---:|---:|---:|---:|---:|
+| `.php` | 779 | 61 429 | 48 879 | 4 713 | 7 837 |
+| `.html` | 10 | 2 013 | 1 727 | 50 | 236 |
+| `.css` | 1 | 47 | 38 | 1 | 8 |
+| **Total** | **790** | **63 489** | **50 644** | **4 764** | **8 081** |
+
+### Répartition des lignes
+
+![Code](https://img.shields.io/badge/Code-79.8%25-blue)
+![Commentaires](https://img.shields.io/badge/Commentaires-7.5%25-green)
+![Lignes vides](https://img.shields.io/badge/Vides-12.7%25-lightgrey)
+
+**Progression de la répartition :**
+
+`████████████████░░░░` Code (79,8 %)
+
+`██░░░░░░░░░░░░░░░░░░` Commentaires (7,5 %)
+
+`███░░░░░░░░░░░░░░░░░` Lignes vides (12,7 %)
+
 ## Objectif du dépôt
 
 `acces-tuteur-developpement` constitue un espace public de documentation et de suivi du développement.
