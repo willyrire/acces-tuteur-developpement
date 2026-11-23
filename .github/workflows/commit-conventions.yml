@@ -1,24 +1,49 @@
 name: Commit Convention
 
 on:
-  workflow_call:
+  pull_request:
+    branches: [main, dev]
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   validate:
+    name: Validate Commit Messages
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
 
       - name: Validate commits
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        shell: bash
         run: |
           regex='^(feat|fix|refactor|style|test|docs|build|chore|perf|ci)(\([a-zA-Z0-9._/-]{1,20}\))?: .{1,100}$'
 
-          git log -1 --format=%s | while IFS= read -r message; do
+          failed=0
+
+          git log --format=%s "${BASE_SHA}..HEAD" | while IFS= read -r message; do
             if [[ ! "$message" =~ $regex ]]; then
               echo "::error::Commit invalide: $message"
-              exit 1
+              failed=1
             fi
           done
+
+          # La validation complète est effectuée ci-dessous
+          # pour conserver le statut d'échec.
+          while IFS= read -r message; do
+            if [[ ! "$message" =~ $regex ]]; then
+              exit 1
+            fi
+          done < <(git log --format=%s "${BASE_SHA}..HEAD")
+
+          echo "Tous les commits respectent la convention."
