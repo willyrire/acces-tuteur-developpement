@@ -1,9 +1,7 @@
 name: Commit Convention
 
 on:
-  pull_request:
-    branches: [main, dev]
-
+  workflow_call:
   workflow_dispatch:
 
 permissions:
@@ -31,19 +29,15 @@ jobs:
 
           failed=0
 
-          git log --format=%s "${BASE_SHA}..HEAD" | while IFS= read -r message; do
+          while IFS= read -r message; do
             if [[ ! "$message" =~ $regex ]]; then
               echo "::error::Commit invalide: $message"
               failed=1
             fi
-          done
-
-          # La validation complète est effectuée ci-dessous
-          # pour conserver le statut d'échec.
-          while IFS= read -r message; do
-            if [[ ! "$message" =~ $regex ]]; then
-              exit 1
-            fi
           done < <(git log --format=%s "${BASE_SHA}..HEAD")
+
+          if [ "$failed" -ne 0 ]; then
+            exit 1
+          fi
 
           echo "Tous les commits respectent la convention."
